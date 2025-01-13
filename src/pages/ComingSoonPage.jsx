@@ -61,10 +61,10 @@ const ComingSoonPage = () => {
                 <div className="mb-6 flex items-center justify-center bg-gradient-to-r from-gray-100 to-gray-300 p-4 rounded-lg shadow-md">
                     <img
                         src="/images/sg-logo.png"
-                        alt="Being Digital Logo"
+                        alt="Server Guard Logo"
                         className="h-16 w-auto"
                     />
-                    <p className="text-blue-300 font-bold text-2xl sm:text-3xl hidden sm:block text-black">
+                    <p className="font-bold text-2xl sm:text-3xl hidden sm:block text-black">
                         Server Guard
                     </p>
                 </div>
