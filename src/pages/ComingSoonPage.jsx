@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import {
-    FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaYoutube,
+    FaFacebookF,
+    FaInstagram,
+    FaLinkedinIn,
+    FaWhatsapp,
+    FaYoutube,
     FaPinterestP,
     FaTwitter,
-    FaGoogle
+    FaGoogle,
 } from "react-icons/fa";
 import ThreeBackground from "../components/animation";
-
 
 const ComingSoonPage = () => {
     const targetDate = new Date("January 15, 2025 00:00:00").getTime();
@@ -34,7 +37,12 @@ const ComingSoonPage = () => {
         const timer = setInterval(() => {
             const time = calculateTimeLeft();
             setTimeLeft(time);
-            if (time.days === 0 && time.hours === 0 && time.minutes === 0 && time.seconds === 0) {
+            if (
+                time.days === 0 &&
+                time.hours === 0 &&
+                time.minutes === 0 &&
+                time.seconds === 0
+            ) {
                 setIsLive(true);
             }
         }, 1000);
@@ -44,58 +52,62 @@ const ComingSoonPage = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 flex items-center justify-center p-4 relative overflow-hidden">
-            {/* Background Animation */}
-            <ThreeBackground />
-
-            <div className="max-w-4xl w-full backdrop-blur-md bg-white/10 rounded-2xl shadow-2xl overflow-hidden border border-white/20">
-                <div className="p-8 md:p-12 flex flex-col items-center text-center">
-                    <div className="mb-6 flex items-center justify-center space-x-4">
-                        <img
-                            src="/images/logo.png"
-                            alt="Being Digital Logo"
-                            className="h-12 w-auto"
-                        />
-                        <p className="text-blue-300 font-bold text-3xl">Being Digital</p>
+        {/* Background Animation */}
+        <ThreeBackground />
+    
+        <div className="max-w-4xl w-full backdrop-blur-md bg-white/10 rounded-2xl shadow-2xl overflow-hidden border border-white/20">
+            <div className="p-8 md:p-12 flex flex-col items-center text-center">
+                {/* Logo Section */}
+                <div className="mb-6 flex items-center justify-center bg-gradient-to-r from-gray-100 to-gray-300 p-4 rounded-lg shadow-md">
+                    <img
+                        src="/images/sg-logo.png"
+                        alt="Being Digital Logo"
+                        className="h-16 w-auto"
+                    />
+                    <p className="text-blue-300 font-bold text-2xl sm:text-3xl hidden sm:block text-black">
+                        Server Guard
+                    </p>
+                </div>
+    
+                {isLive ? (
+                    <div className="flex flex-col items-center space-y-4">
+                        <h1 className="text-4xl md:text-6xl font-bold text-white bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-yellow-300 animate-bounce">
+                            🎉 We Are Live Now! 🎉
+                        </h1>
+                        <p className="text-gray-300 text-lg max-w-2xl">
+                            Thank you for your patience. Explore our platform and transform your digital presence today!
+                        </p>
                     </div>
-
-                    {isLive ? (
-                        // When Countdown Ends
-                        <div className="flex flex-col items-center space-y-4">
-                            <h1 className="text-5xl md:text-6xl font-bold text-white bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-yellow-300 animate-bounce">
-                                🎉 We Are Live Now! 🎉
-                            </h1>
-                            <p className="text-gray-300 text-lg max-w-2xl">
-                                Thank you for your patience. Explore our platform and transform your digital presence today!
-                            </p>
-                        </div>
-                    ) : (
-                        // Countdown Display
-                        <>
-                            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-purple-200">
-                                New Things Coming Soon
-                            </h1>
-                            <p className="text-gray-300 text-lg mb-12 max-w-2xl">
-                                We're crafting a revolutionary platform that will transform your digital presence. Join us on this journey to redefine digital marketing excellence.
-                            </p>
-                            <div className="grid grid-cols-4 gap-6 mb-12 px-8 py-6 rounded-lg font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg">
-                                {[
-                                    { label: "Days", value: timeLeft.days },
-                                    { label: "Hours", value: timeLeft.hours },
-                                    { label: "Minutes", value: timeLeft.minutes },
-                                    { label: "Seconds", value: timeLeft.seconds },
-                                ].map(({ label, value }, index) => (
-                                    <div key={index} className="flex flex-col items-center">
-                                        <div className="text-5xl font-extrabold text-white mb-2">
-                                            {value.toString().padStart(2, "0")}
-                                        </div>
-                                        <div className="text-sm uppercase tracking-wide text-blue-200">
-                                            {label}
-                                        </div>
+                ) : (
+                    <>
+                        {/* Updated Stylish Header */}
+                        <h1 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-500 shadow-lg shadow-indigo-500/30 mb-6">
+                            Exciting Updates Coming Soon
+                        </h1>
+                        <p className="text-gray-300 text-base sm:text-lg mb-8 max-w-2xl leading-relaxed tracking-wide">
+                            Release on : 15 Jan 2025
+                        </p>
+    
+                        {/* Countdown Section */}
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mb-12 px-6 py-4 rounded-lg font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg">
+                            {[
+                                { label: "Days", value: timeLeft.days },
+                                { label: "Hours", value: timeLeft.hours },
+                                { label: "Minutes", value: timeLeft.minutes },
+                                { label: "Seconds", value: timeLeft.seconds },
+                            ].map(({ label, value }, index) => (
+                                <div key={index} className="flex flex-col items-center">
+                                    <div className="text-4xl sm:text-5xl font-extrabold text-white mb-2">
+                                        {value.toString().padStart(2, "0")}
                                     </div>
-                                ))}
-                            </div>
-                        </>
-                    )}
+                                    <div className="text-xs sm:text-sm uppercase tracking-wide text-blue-200">
+                                        {label}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </>
+                )}
 
                     {/* Social Media Links */}
                     <div className="flex gap-3 sm:gap-4 justify-center mt-6">

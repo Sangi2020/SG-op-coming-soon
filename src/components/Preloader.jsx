@@ -28,7 +28,7 @@ const Preloader = () => {
       <div className="flex flex-col items-center gap-8">
         <div className="w-36 h-auto relative animate-[pulse_1.5s_infinite]">
           <img
-            src="/images/logo.png"
+            src="/images/sg-logo.png"
             alt="Logo"
             width={150}
             height={150}
