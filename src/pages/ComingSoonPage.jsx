@@ -64,7 +64,7 @@ const ComingSoonPage = () => {
                         alt="Being Digital Logo"
                         className="h-16 w-auto"
                     />
-                    <p className="text-blue-300 font-bold text-2xl sm:text-3xl hidden sm:block text-black">
+                    <p className=" font-bold text-2xl sm:text-3xl hidden sm:block text-black">
                         Server Guard
                     </p>
                 </div>
